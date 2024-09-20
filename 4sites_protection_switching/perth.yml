@@ -1,0 +1,31 @@
+version: 1
+own_address:
+  accountid: 2a51xaba-wwww-aaaa-xxxx-x110051c35af
+  nodeid: perth
+socket_endpoints:
+  - socket_id: socket1
+    bind_ip: '0.0.0.0:7111'
+    destination_ip: '127.0.0.1:7110'
+    receive_blue_input_from:
+    receive_red_input_from:
+    redundancy_switching_threshold_seconds: 3
+webrtc_peers:
+  - peer_id: perth_brisbane
+    is_requester: true
+    remote_node_id: brisbane
+    datachannel_endpoints:
+      - datachannel_id: per_bri_ch_1
+        ordered: false
+        max_packet_life_time_milliseconds: 500
+        max_retransmits: 3
+        receive_channel_input_from: socket1
+  - peer_id: perth_melbourne
+    is_requester: true
+    remote_node_id: melbourne
+    datachannel_endpoints:
+      - datachannel_id: per_mel_ch_1
+        ordered: false
+        max_packet_life_time_milliseconds: 500
+        max_retransmits: 3
+        receive_channel_input_from: socket1
+

@@ -1,0 +1,14 @@
+version: 1
+own_address:
+  accountid: 2a51xaba-wwww-aaaa-xxxx-x110051c35af
+  nodeid: sydney
+webrtc_peers:
+  - peer_id: per_syd
+    is_requester: false
+    remote_node_id: perth
+    datachannel_endpoints:
+      - datachannel_id: per_syd_ch_1
+        ordered: false
+        max_packet_life_time_milliseconds: 700
+        max_retransmits: 3
+        receive_channel_input_from: per_syd_ch_1
