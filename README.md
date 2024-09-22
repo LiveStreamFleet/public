@@ -8,11 +8,11 @@ For more resources, including download links, detailed getting started instructi
 
 ## Download LSFGateway binary
 
-Please see [Live Stream Fleet Getting Started](https://livestreamfleet.com/download) to download the binaries and read how to set it up.
+Please see [Live Stream Fleet Getting Started](https://livestreamfleet.com/pages/download) to download the binaries and read how to set it up.
 
 ## Configuration Examples
 
-We’ve provided several example configuration files to help you quickly set up and test Live Stream Fleet. The simplest example is a [2-site loopback](https://github.com/LiveStreamFleet/public/tree/main/2site_loopback) configuration for basic testing. Additionally, you’ll find a [4-site configuration](https://github.com/LiveStreamFleet/public/tree/main/4sites_protection_switching) that demonstrates how to set up point-to-multipoint communication and protection switching.
+We’ve provided several example configuration files to help you quickly set up and test Live Stream Fleet. The simplest example is a [2-site loopback](https://livestreamfleet.github.io/public/tree/main/2site_loopback) configuration for basic testing. Additionally, you’ll find a [4-site configuration](https://github.com/LiveStreamFleet/public/tree/main/4sites_protection_switching) that demonstrates how to set up point-to-multipoint communication and protection switching.
 
 ## Community Forum
 
@@ -21,4 +21,7 @@ We value your feedback and would love to hear your ideas on how to improve the L
 ## Issues
 
 If you encounter any problems or have feature requests, feel free to open a new issue using the [Issues site](https://github.com/LiveStreamFleet/public/issues). We encourage you to report bugs, suggest features, or discuss anything related to the project.
+
+## License and EULA
+By downloading and using this software, you agree to our [End User License Agreement](https://livestreamfleet.github.io/public/eula.html).
 
