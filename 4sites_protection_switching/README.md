@@ -169,7 +169,7 @@ webrtc_peers:
 
 #### webrtc_peers:
 
-The top-level list containing WebRTC peer connections.
+This is the top-level list that defines WebRTC peer connections between nodes. Each peer connection facilitates data transfer between two nodes and can include one or more data channels to handle different types of traffic.
 
 #### peer_id: 
 
@@ -179,19 +179,34 @@ A unique ID for the peer connection between two nodes.
 
 #### is_requester:
 
-In WebRTC, one node must request the connection. If **is_requester** is true, the node initiates the connection. If false, the node will only accept connection requests from the remote_node_id with matching **peer_id** and **accountid**.
+In WebRTC, one node must request the connection. Use is_requester to define whether the node initiates the WebRTC connection.
+
+- If is_requester is **true**, this node will request the connection.
+- If is_requester is **false**, this node will only accept connection requests from the remote_node_id if both the peer_id and accountid match exactly.
+
+This ensures that each connection is initiated or accepted explicitly, preventing unauthorized or accidental connections.
 
 #### remote_node_id:
 
-The nodeid of the remote node that will connect to this peer. The remote_node_id must be identical to the node if of the remote node for the connection to be established.
+pecifies the unique nodeid of the remote node that will connect to this peer.
+
+The remote_node_id must exactly match the ID of the remote node for the connection to be established. Mismatched IDs will prevent the connection.
 
 #### datachannel_endpoints: 
 
-You can establish more than one data channel within a single peer connection if required.
+A list of data channels within a single WebRTC peer connection.
+
+Multi-Channel Support: A single WebRTC peer connection can contain multiple data channels, allowing you to handle different types of traffic independently. For example, you can use one data channel for UDP transport and another for TCP.
+This flexibility enables efficient transport of diverse traffic types over the same WebRTC connection.
 
 #### datachannel_id:
 
-A unique name for the data channel. This must be unique within the configuration file.
+A unique identifier for each data channel.
+
+- This ID must be unique within the configuration file to avoid conflicts.
+- It allows you to distinguish between multiple data channels in the same peer connection.
+
+By defining unique datachannel_ids, you can organize and manage multiple data streams effectively within a single WebRTC peer connection.
 
 #### ordered:
 
