@@ -9,6 +9,14 @@ socket_endpoints:
     receive_blue_input_from: bri_syd_ch_1
     receive_red_input_from: syd_mel_ch_1
     redundancy_switching_threshold_seconds: 3
+  - socket_id: socket_tcp
+    is_tcp: true
+    bind_ip:
+    destination_ip: '127.0.0.1:8082'
+    receive_blue_input_from: per_syd_tcp
+    receive_red_input_from:
+    ip_in_max_rate_mbps: 3
+    ip_out_max_rate_mbps: 3
 webrtc_peers:
   - peer_id: sydney_melbourne
     is_requester: true
@@ -28,4 +36,12 @@ webrtc_peers:
         max_packet_life_time_milliseconds: 5
         max_retransmits: 3
         receive_channel_input_from: syd_mel_ch_1
-
+  - peer_id: perth_sydney
+    is_requester: false
+    remote_node_id: perth
+    datachannel_endpoints:
+      - datachannel_id: per_syd_tcp
+        ordered: true
+        max_packet_life_time_milliseconds: 0
+        max_retransmits: 1
+        receive_channel_input_from: socket_tcp
