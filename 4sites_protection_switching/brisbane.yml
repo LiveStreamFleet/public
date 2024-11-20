@@ -5,7 +5,7 @@ own_address:
 socket_endpoints:
   - socket_id: socket1
     bind_ip: '0.0.0.0:7222'
-    destination_ip: '224.0.0.2:2222'
+    destination_ip: '127.0.0.1:7220'
     receive_blue_input_from: per_bri_ch_1
     receive_red_input_from: bri_syd_ch_1
     redundancy_switching_threshold_seconds: 3
@@ -18,7 +18,7 @@ webrtc_peers:
         ordered: false
         max_packet_life_time_milliseconds: 5
         max_retransmits: 3
-        receive_channel_input_from:
+        receive_channel_input_from: bri_syd_ch_1
   - peer_id: brisbane_sydney
     is_requester: true
     remote_node_id: sydney

@@ -6,12 +6,12 @@ socket_endpoints:
   - socket_id: socket1
     bind_ip: '0.0.0.0:7111'
     destination_ip: '127.0.0.1:7110'
-    receive_blue_input_from:
-    receive_red_input_from:
+    receive_blue_input_from: per_mel_ch_1
+    receive_red_input_from: per_bri_ch_1
     redundancy_switching_threshold_seconds: 3
   - socket_id: socket_tcp
     is_tcp: true
-    bind_ip: '0.0.0.0:7121'
+    bind_ip: '0.0.0.0:7083'
     destination_ip:
     receive_blue_input_from: per_syd_tcp
     receive_red_input_from:

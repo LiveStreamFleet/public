@@ -5,14 +5,14 @@ own_address:
 socket_endpoints:
   - socket_id: socket1
     bind_ip: '0.0.0.0:7333'
-    destination_ip: '192.168.12.22:7330'
+    destination_ip: '127.0.0.1:7330'
     receive_blue_input_from: bri_syd_ch_1
     receive_red_input_from: syd_mel_ch_1
     redundancy_switching_threshold_seconds: 3
   - socket_id: socket_tcp
     is_tcp: true
     bind_ip:
-    destination_ip: '127.0.0.1:8082'
+    destination_ip: '127.0.0.1:8083'
     receive_blue_input_from: per_syd_tcp
     receive_red_input_from:
     ip_in_max_rate_mbps: 3
