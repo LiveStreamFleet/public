@@ -111,6 +111,10 @@ This parameter specifies the ID of a socket or data channel as the primary input
 
 This parameter specifies the secondary (protected) input source.
 
+### hitless_buffer_latency_ms: 
+
+Configure how much much data to store in the buffer for hitless protection.
+
 #### redundancy_switching_threshold_seconds:
 
 This parameter defines the time (in seconds) the system waits before switching between blue and red inputs when one of them stops receiving data entirely. This only applies when the blue and red inputs originate from different sockets.
@@ -148,7 +152,6 @@ Below is an example configuration of the Perth node, which establishes data chan
 ```yaml
 webrtc_peers:
   - peer_id: perth_brisbane
-    is_requester: true
     remote_node_id: brisbane
     datachannel_endpoints:
       - datachannel_id: per_bri_ch_1
@@ -157,7 +160,6 @@ webrtc_peers:
         max_retransmits: 3
         receive_channel_input_from: socket1
   - peer_id: perth_melbourne
-    is_requester: true
     remote_node_id: melbourne
     datachannel_endpoints:
       - datachannel_id: per_mel_ch_1
@@ -176,15 +178,6 @@ This is the top-level list that defines WebRTC peer connections between nodes. E
 A unique ID for the peer connection between two nodes.
 
 **Security note:** The peer_id must be identical in the configuration files of both nodes. lsfgateway will refuse the data channel connection if the peer_id is not identical on both ends.
-
-#### is_requester:
-
-In WebRTC, one node must request the connection. Use is_requester to define whether the node initiates the WebRTC connection.
-
-- If is_requester is **true**, this node will request the connection.
-- If is_requester is **false**, this node will only accept connection requests from the remote_node_id if both the peer_id and accountid match exactly.
-
-This ensures that each connection is initiated or accepted explicitly, preventing unauthorized or accidental connections.
 
 #### remote_node_id:
 

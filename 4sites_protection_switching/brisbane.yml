@@ -11,7 +11,6 @@ socket_endpoints:
     redundancy_switching_threshold_seconds: 3
 webrtc_peers:
   - peer_id: perth_brisbane
-    is_requester: false
     remote_node_id: perth
     datachannel_endpoints:
       - datachannel_id: per_bri_ch_1
@@ -20,7 +19,6 @@ webrtc_peers:
         max_retransmits: 3
         receive_channel_input_from: bri_syd_ch_1
   - peer_id: brisbane_sydney
-    is_requester: true
     remote_node_id: sydney
     datachannel_endpoints:
       - datachannel_id: bri_syd_ch_1

@@ -19,7 +19,6 @@ socket_endpoints:
     ip_out_max_rate_mbps: 3
 webrtc_peers:
   - peer_id: sydney_melbourne
-    is_requester: true
     remote_node_id: melbourne
     datachannel_endpoints:
       - datachannel_id: syd_mel_ch_1
@@ -28,7 +27,6 @@ webrtc_peers:
         max_retransmits: 3
         receive_channel_input_from: bri_syd_ch_1
   - peer_id: brisbane_sydney
-    is_requester: false
     remote_node_id: brisbane
     datachannel_endpoints:
       - datachannel_id: bri_syd_ch_1
@@ -37,7 +35,6 @@ webrtc_peers:
         max_retransmits: 3
         receive_channel_input_from: syd_mel_ch_1
   - peer_id: perth_sydney
-    is_requester: false
     remote_node_id: perth
     datachannel_endpoints:
       - datachannel_id: per_syd_tcp

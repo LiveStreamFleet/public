@@ -4,7 +4,6 @@ own_address:
   nodeid: sydney
 webrtc_peers:
   - peer_id: per_syd
-    is_requester: false
     remote_node_id: perth
     datachannel_endpoints:
       - datachannel_id: per_syd_ch_1
