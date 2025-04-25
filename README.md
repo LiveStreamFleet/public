@@ -4,15 +4,19 @@ Welcome to the Live Stream Fleet public repository! Here you'll find resources a
 
 ## Live Stream Fleet Website
 
-For more resources, including download links, detailed getting started instructions, and options to purchase additional node licenses, please visit the [Live Stream Fleet website](https://livestreamfleet.com). The website serves as the central hub for managing your nodes, accessing software updates, and reviewing documentation.
+For more resources, including download links, detailed getting started instructions, and options to purchase additional node licenses, please visit the [Live Stream Fleet website](https://livestreamfleet.com). The website serves as the central hub for purchasing node licenses, accessing software updates, and reviewing documentation.
+
+For remote configuration and management of your Live Stream Fleet Gateway nodes, visit [LSF Manager](https://manager.livestreamfleet.com). LSF Manager is a free, web-based tool that lets you monitor and control all your nodes from any device, anywhere in the world.
 
 ## Download LSFGateway binary
 
 Please see [Live Stream Fleet Getting Started](https://livestreamfleet.com/pages/download) to download the binaries and read how to set it up.
 
-## Configuration Examples
+## Tutorial
 
-We’ve provided several example configuration files to help you quickly set up and test Live Stream Fleet. The simplest example is a [2-site loopback](https://github.com/LiveStreamFleet/public/tree/main/2site_loopback) configuration for basic testing. Additionally, you’ll find a [4-site configuration](https://github.com/LiveStreamFleet/public/tree/main/4sites_protection_switching) that demonstrates how to set up point-to-multipoint communication and protection switching.
+We are working on a new tutorial that describes how to use LSFGateway nodes together with LSF Manager. 
+
+Here follows some older configuration description that are a litle outdated now, with the release of v0.6.0. The simplest example is a [2-site loopback](https://github.com/LiveStreamFleet/public/tree/main/2site_loopback) configuration for basic testing. Additionally, you’ll find a [4-site configuration](https://github.com/LiveStreamFleet/public/tree/main/4sites_protection_switching) that demonstrates how to set up point-to-multipoint communication and protection switching.
 
 ## Community Forum
 
