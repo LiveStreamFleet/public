@@ -12,11 +12,9 @@ For remote configuration and management of your Live Stream Fleet Gateway nodes,
 
 Please see [Live Stream Fleet Getting Started](https://livestreamfleet.com/pages/download) to download the binaries and read how to set it up.
 
-## Tutorial
+## User Manual
 
-We are working on a new tutorial that describes how to use LSFGateway nodes together with LSF Manager. 
-
-Here follows some older configuration description that are a litle outdated now, with the release of v0.6.0. The simplest example is a [2-site loopback](https://github.com/LiveStreamFleet/public/tree/main/2site_loopback) configuration for basic testing. Additionally, you’ll find a [4-site configuration](https://github.com/LiveStreamFleet/public/tree/main/4sites_protection_switching) that demonstrates how to set up point-to-multipoint communication and protection switching.
+We are working on a new [User Manual](https://manual.livestreamfleet.com) that describes how to use LSFGateway nodes together with LSF Manager. 
 
 ## Community Forum
 
