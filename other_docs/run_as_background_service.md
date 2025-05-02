@@ -47,9 +47,11 @@ Here’s an example template for the service file:
 ```sh
 [Unit]
 Description=LSF Gateway Service
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
+ExecStartPre=/bin/sleep 3
 User=lsfgatewayuser
 Group=nogroup
 ExecStart=/usr/local/bin/lsfgateway -f /home/lsfgatewayuser/config_file.yml -m monitoring
@@ -62,29 +64,14 @@ WantedBy=multi-user.target
 #### Explanation:
 
 - **Description:** A brief description of the service.
+- **Wants:** LSFGateway needs to detect the local IP address of the device. Therefore it needs to wait for the network interfaces to start first. 
 - **After:** Ensures that the service starts after the network is up.
+- **ExecStartPre=/bin/sleep 3** Sometimes if the device has multiple IP interfaces, the service eneds to wait for all of them to load first.
 - **User:** The user under which the service will run.
 - **Group:** The group under which the service will run.
 - **ExecStart:** Specifies the command to start the lsfgateway binary, passing any required flags.
 - **Restart:** Automatically restarts the service if it fails.
 
-##### Some other values that could be used 
-For future reference, here’s additional content you can use in the service configuration:
-
-```bash
-[Service]
-WorkingDirectory=/path/to/working/directory
-Restart=always
-Environment=PATH=/usr/bin:/usr/local/bin
-Environment=OTHER_ENV_VAR=value
-```
-
-- **Description:** A brief description of the service.
-- **After:** Specifies that the service should start after the network is up.
-- **ExecStart:** The command to start your Rust program. Replace /path/to/your/binary with the actual path to your binary.
-- **WorkingDirectory:** The directory from which the program will run (optional).
-- **Restart:** Ensures the service will restart automatically if it crashes. always is a good default.
-- **Environment:** Environment variables needed by your program (optional).
 
 ### Step 4: Reload Systemd and Start the Service
 After saving the service file, reload systemd to recognize the new service and start it:
